@@ -5,6 +5,31 @@ app = Flask(__name__)
 @app.route("/")
 def hello():
     return "Hello World!"
+  
+@app.route("/euler1")
+def euler1():
+  Totsum = 0
+   for i in range (1000):
+     if i%3 == 0 :
+       Totsum +=i;
+     elif i % 5 == 0:
+       Totsum += i;
+       print(Totsum)
+
+@app.route("/euler2")
+def euler2():
+f1 = 1
+f2 = 2
+temp = 0
+total = 0
+while temp <=4000000:
+  temp = f2
+  if temp % 2 == 0:
+    total = total + temp
+    print (total)
+    temp = f1 + f2
+    f1 = f2
+    f2 = temp
 
 @app.route('/upload', methods=['GET', 'POST'])
 def upload_file():
